@@ -896,13 +896,39 @@ data:
                     "datasource": "$datasource",
                     "hide": 0,
                     "includeAll": false,
+                    "label": "Instance Name",
+                    "multi": false,
+                    "name": "instance_name",
+                    "options": [
+
+                    ],
+                    "query": "label_values(node_uname_info{job=\"node-exporter\", sysname!=\"Darwin\"}, nodename)",
+                    "refresh": 2,
+                    "regex": "",
+                    "sort": 0,
+                    "tagValuesQuery": "",
+                    "tags": [
+
+                    ],
+                    "tagsQuery": "",
+                    "type": "query",
+                    "useTags": false
+                },
+                {
+                    "allValue": null,
+                    "current": {
+
+                    },
+                    "datasource": "$datasource",
+                    "hide": 2,
+                    "includeAll": false,
                     "label": "Instance",
                     "multi": false,
                     "name": "instance",
                     "options": [
 
                     ],
-                    "query": "label_values(node_uname_info{job=\"node-exporter\", sysname!=\"Darwin\"}, instance)",
+                    "query": "label_values(node_uname_info{job=\"node-exporter\", nodename=\"$instance_name\"}, instance)",
                     "refresh": 2,
                     "regex": "",
                     "sort": 0,
